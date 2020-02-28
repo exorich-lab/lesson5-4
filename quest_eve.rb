@@ -10,22 +10,28 @@ puts "Вы играете в фантастический квест про ко
 sleep (2)
 puts "Пожалуйста введите в интерком ваше имя коммандир"
 username = gets.chomp.to_s.capitalize
-puts "1) Вы капитан фрегата минматарской федерации класса " + ship[0] + " (рекомендуем)!"
-puts "2) Вы капитан научно-исследовательского фрегата " + ship[1]
-puts "3) Вы капитан фрегата калдарской федерации " + ship[2]
-puts "4) Вы неопытный пират на только что украденным фрегате " + ship[3]
-sleep 1
-puts "Выберите 1,2,3 или 4"
-choise = gets.chomp.to_i
-if choise == 1
-  ship_name = ship[0]
-elsif choise == 2
-  ship_name = ship[1]
-elsif choise == 3
-  ship_name = ship[2]
-elsif choise == 4
-  ship_name = ship[3]
+
+choice = nil
+until choice == 1 || choice == 2 || choice == 3 || choice == 4 do
+  puts "1) Вы капитан фрегата минматарской федерации класса " + ship[0] + " (рекомендуем)!"
+  puts "2) Вы капитан научно-исследовательского фрегата " + ship[1]
+  puts "3) Вы капитан фрегата калдарской федерации " + ship[2]
+  puts "4) Вы неопытный пират на только что украденным фрегате " + ship[3]
+  puts "Выберите 1,2,3 или 4"
+  if choice == 1
+    ship_name = ship[0]
+  elsif choice == 2
+    ship_name = ship[1]
+  elsif choice == 3
+    ship_name = ship[2]
+  else choice == 4
+    ship_name = ship[3]
+  end
+  choice = gets.chomp.to_i
 end
+
+
+
 puts "Патрулируя район астероидов вы получили сигнал SOS от неизвестного источника\n\n"
 sleep (1)
 if ship_name == ship[0] || ship_name == ship[1] || ship_name == ship[2]
